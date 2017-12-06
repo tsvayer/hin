@@ -2,7 +2,11 @@
 
 const program = require('commander')
 const fs = require('fs')
+const path = require('path')
 const package = require('../package.json')
+
+const USER_HOME = process.env.HOME || process.env.USERPROFILE
+const APP_HOME = process.env.HIN_HOME || path.join(USER_HOME, '/.hin/')
 
 program
     .version(package.version)
@@ -11,24 +15,39 @@ program
     .option('-c, --cert <path>', 'Path to Root CA file in PEM format')
     .option('-k, --key <path>', 'Path to Private Key file in PEM format')
     .option('-p, --port <value>', 'Proxy port', 8001)
-    .option('-g, --gen', 'Generate Private Key and Root CA')
+    .option('-g, --generate', 'Generate Private Key and Root CA')
     .parse(process.argv)
 
-let caKey, caCert
+if (!fs.existsSync(APP_HOME))
+    fs.mkdirSync(APP_HOME)
 
-if (program.gen) {
+let caCertPath = path.join(APP_HOME, '_ca.crt')
+let caKeyPath = path.join(APP_HOME, '_ca.pem')
+
+if (program.cert)
+    caCertPath = program.cert
+
+if (program.key)
+    caKeyPath = program.key
+
+let shouldGenerate = false
+if(!fs.existsSync(caKeyPath) && !fs.existsSync(caCertPath))
+    shouldGenerate = true
+
+//TODO: add confirmation for overwrite
+if (program.generate || shouldGenerate) {
+    console.log('Generating new Private Key and Root CA...')
     const { createRootCA } = require('../lib/certificate')
     const { key, cert } = createRootCA("HIN - Http Interceptor")
-    caKey = key
-    caCert = cert
-    fs.writeFileSync('.hin/_ca.crt', cert, 'ascii')
-    fs.writeFileSync('.hin/_ca.pem', key, 'ascii')
-    console.log(key)
-    console.log(cert)
-} else if (program.cert && program.key) {
-    caCert = fs.readFileSync(program.cert, 'ascii')
-    caKey = fs.readFileSync(program.key, 'ascii')
+    fs.writeFileSync(caCertPath, cert, 'ascii')
+    fs.writeFileSync(caKeyPath, key, 'ascii')
+    console.log(`New Private Key is written to ${caKeyPath}`)
+    console.log(`New Root CA certificate is written to ${caCertPath}`)
+    console.log('Please note that you need to add Root CA to Trusted Certificates')
 }
+
+let caCert = fs.readFileSync(caCertPath, 'ascii')
+let caKey = fs.readFileSync(caKeyPath, 'ascii')
 
 if (caCert && caKey) {
     const Proxy = require('../lib/proxy')
@@ -41,8 +60,10 @@ if (caCert && caKey) {
         }
         await new Proxy(options).start()
 
+        console.log(`Proxy started on ${program.port}`)
+
         //TODO: better exception management
-        process.on('uncaughtException', (err) => {
+        process.on('uncaughtException', () => {
             // console.error(err)
         })
     })()
