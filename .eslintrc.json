@@ -1,0 +1,24 @@
+{
+    "extends": "eslint:recommended",
+    "env": {
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 8
+    },
+    "rules": {
+        "no-console": 0,
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
+    }
+}
