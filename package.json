@@ -2,7 +2,7 @@
   "name": "hin",
   "version": "0.0.1",
   "description": "Http/Https Interceptor",
-  "homepage": "https://github.com/tsvayer/zproxy",
+  "homepage": "https://github.com/tsvayer/hin",
   "author": {
     "name": "Vitaliy Tsvayer",
     "email": "tsvayer@gmail.com"
@@ -10,15 +10,14 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tsvayer/zproxy.git"
+    "url": "https://github.com/tsvayer/hin.git"
   },
   "bugs": {
-    "url": "https://github.com/tsvayer/zproxy/issues"
+    "url": "https://github.com/tsvayer/hin/issues"
   },
   "main": "./lib/proxy.js",
   "bin": "./bin/cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./bin/cli.js",
     "lint": "eslint ."
   },
