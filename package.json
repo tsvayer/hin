@@ -1,6 +1,6 @@
 {
   "name": "hin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Http/Https Interceptor",
   "homepage": "https://github.com/tsvayer/hin",
   "author": {
@@ -47,5 +47,5 @@
     "web",
     "debugger"
   ],
-  "private": true
+  "private": false
 }
