@@ -5,7 +5,7 @@ const fs = require('fs')
 const path = require('path')
 const package = require('../package.json')
 
-const USER_HOME = process.env.HOME || process.env.USERPROFILE
+const USER_HOME = process.env.USERPROFILE || process.env.HOME
 const APP_HOME = process.env.HIN_HOME || path.join(USER_HOME, '/.hin/')
 
 program
