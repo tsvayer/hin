@@ -44,7 +44,6 @@ $ security add-trusted-cert -d -r trustRoot -k ~/Library/Keychains/login.keychai
 ### Debian, Ubuntu
 ```bash
 $ sudo cp ~/.hin/_ca.crt /usr/local/share/ca-certificates/hin_ca.crt
-$ sudo chmod 644 /usr/local/share/ca-certificates/hin_ca.crt
 $ sudo update-ca-certificates
 ```
 
@@ -58,6 +57,12 @@ $ sudo update-ca-trust
 ```bash
 $ sudo cp ~/.hin/_ca.crt /etc/ca-certificates/trust-source/anchors/hin_ca.crt
 $ sudo update-ca-trust
+```
+
+### Gentoo
+```bash
+$ sudo cp ~/.hin/_ca.crt /usr/share/ca-certificates/hin_ca.crt
+$ sudo update-ca-certificates
 ```
 
 ## Windows
