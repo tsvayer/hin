@@ -1,51 +1,53 @@
 {
-  "name": "hin",
-  "version": "0.0.3",
-  "description": "Http/Https Interceptor",
-  "homepage": "https://github.com/tsvayer/hin",
-  "author": {
-    "name": "Vitaliy Tsvayer",
-    "email": "tsvayer@gmail.com"
-  },
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tsvayer/hin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tsvayer/hin/issues"
-  },
-  "main": "./lib/proxy.js",
-  "bin": "./bin/cli.js",
-  "scripts": {
-    "start": "./bin/cli.js",
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "commander": "^2.12.2",
-    "doasync": "^2.0.0",
-    "node-forge": "^0.7.1"
-  },
-  "devDependencies": {
-    "eslint": "^4.12.1"
-  },
-  "files": [
-    "./lib",
-    "./bin"
-  ],
-  "directories": {
-    "lib": "./lib",
-    "doc": "./doc",
-    "example": "./example",
-    "test": "./test"
-  },
-  "keywords": [
-    "proxy",
-    "http",
-    "https",
-    "ssl",
-    "web",
-    "debugger"
-  ],
-  "private": true
+    "name": "hin",
+    "version": "0.0.3",
+    "description": "Http/Https Interceptor",
+    "homepage": "https://github.com/tsvayer/hin",
+    "author": {
+        "name": "Vitaliy Tsvayer",
+        "email": "tsvayer@gmail.com"
+    },
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tsvayer/hin.git"
+    },
+    "bugs": {
+        "url": "https://github.com/tsvayer/hin/issues"
+    },
+    "main": "./lib/proxy.js",
+    "bin": "./bin/cli.js",
+    "scripts": {
+        "start": "./bin/cli.js",
+        "lint": "eslint ."
+    },
+    "pre-commit": "lint",
+    "dependencies": {
+        "commander": "^2.12.2",
+        "doasync": "^2.0.0",
+        "node-forge": "^0.7.1"
+    },
+    "devDependencies": {
+        "eslint": "^4.12.1",
+        "pre-commit": "^1.2.2"
+    },
+    "files": [
+        "./lib",
+        "./bin"
+    ],
+    "directories": {
+        "lib": "./lib",
+        "doc": "./doc",
+        "example": "./example",
+        "test": "./test"
+    },
+    "keywords": [
+        "proxy",
+        "http",
+        "https",
+        "ssl",
+        "web",
+        "debugger"
+    ],
+    "private": false
 }
