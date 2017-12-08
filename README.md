@@ -47,7 +47,11 @@ $ security add-trusted-cert -d -r trustRoot -k ~/Library/Keychains/login.keychai
 `TODO`
 
 ### Windows
-`TODO`
+The following powershell commands will add generated certificate to current user's Trusted Root Certification Authorities list:
+```powershell
+PS> Import-Module pki
+PS> Import-Certificate -FilePath "${env:USERPROFILE}\.hin\_ca.crt" -CertStoreLocation Cert:\CurrentUser\Root
+```
 
 ## Firefox
 Firefox manages its own certificate authorities list.
