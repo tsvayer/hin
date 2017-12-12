@@ -1,60 +1,54 @@
 {
-    "name": "hin",
-    "version": "0.0.4",
-    "description": "Http/Https Interceptor",
-    "homepage": "https://github.com/tsvayer/hin",
-    "author": {
-        "name": "Vitaliy Tsvayer",
-        "email": "tsvayer@gmail.com"
-    },
-    "license": "ISC",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/tsvayer/hin.git"
-    },
-    "bugs": {
-        "url": "https://github.com/tsvayer/hin/issues"
-    },
-    "main": "./lib/proxy.js",
-    "bin": "./bin/cli.js",
-    "scripts": {
-        "start": "./bin/cli.js",
-        "lint": "eslint bin lib",
-        "format:prettier": "prettier --write '{bin,lib}/**/*.js'",
-        "format:lint": "eslint --fix bin lib",
-        "format": "npm run format:prettier && npm run format:lint"
-    },
-    "pre-commit": "lint",
-    "dependencies": {
-        "commander": "^2.12.2",
-        "doasync": "^2.0.0",
-        "node-forge": "^0.7.1"
-    },
-    "devDependencies": {
-        "eslint": "^4.12.1",
-        "eslint-config-airbnb-base": "^12.1.0",
-        "eslint-config-prettier": "^2.9.0",
-        "eslint-plugin-import": "^2.8.0",
-        "pre-commit": "^1.2.2",
-        "prettier": "^1.9.1"
-    },
-    "files": [
-        "./lib",
-        "./bin"
-    ],
-    "directories": {
-        "lib": "./lib",
-        "doc": "./doc",
-        "example": "./example",
-        "test": "./test"
-    },
-    "keywords": [
-        "proxy",
-        "http",
-        "https",
-        "ssl",
-        "web",
-        "debugger"
-    ],
-    "private": false
+  "name": "hin",
+  "version": "0.0.4",
+  "description": "Http/Https Interceptor",
+  "homepage": "https://github.com/tsvayer/hin",
+  "author": {
+    "name": "Vitaliy Tsvayer",
+    "email": "tsvayer@gmail.com"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsvayer/hin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tsvayer/hin/issues"
+  },
+  "main": "./lib/proxy.js",
+  "bin": "./bin/cli.js",
+  "scripts": {
+    "start": "./bin/cli.js",
+    "lint": "eslint bin lib",
+    "format:prettier": "prettier --write '{bin,lib}/**/*.js'",
+    "format:lint": "eslint --fix bin lib",
+    "format": "npm run format:prettier && npm run format:lint",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --write", "eslint --fix", "git add"]
+  },
+  "dependencies": {
+    "commander": "^2.12.2",
+    "doasync": "^2.0.0",
+    "node-forge": "^0.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.1"
+  },
+  "files": ["./lib", "./bin"],
+  "directories": {
+    "lib": "./lib",
+    "doc": "./doc",
+    "example": "./example",
+    "test": "./test"
+  },
+  "keywords": ["proxy", "http", "https", "ssl", "web", "debugger"],
+  "private": false
 }
