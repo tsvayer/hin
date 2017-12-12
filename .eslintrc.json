@@ -1,5 +1,5 @@
 {
-    "extends": "eslint:recommended",
+    "extends": ["airbnb-base", "prettier"],
     "env": {
         "node": true
     },
@@ -7,18 +7,10 @@
         "ecmaVersion": 8
     },
     "rules": {
-        "no-console": 0,
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "semi": [
-            "error",
-            "never"
-        ]
+        "no-console": "off",
+        "indent": ["error", 2],
+        "semi": ["error", "never"],
+        "no-return-assign": "warn",
+        "no-param-reassign": "warn"
     }
 }
