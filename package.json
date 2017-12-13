@@ -19,9 +19,10 @@
   "bin": "./bin/cli.js",
   "scripts": {
     "start": "./bin/cli.js",
-    "lint": "eslint bin lib",
-    "format:prettier": "prettier --write '{bin,lib}/**/*.js'",
-    "format:lint": "eslint --fix bin lib",
+    "lint": "eslint bin lib test",
+    "test": "jest",
+    "format:prettier": "prettier --write '{bin,lib,test}/**/*.js'",
+    "format:lint": "eslint --fix bin lib test",
     "format": "npm run format:prettier && npm run format:lint",
     "precommit": "lint-staged"
   },
@@ -39,6 +40,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
     "husky": "^0.14.3",
+    "jest": "^21.2.1",
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.1"
   },

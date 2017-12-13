@@ -1,16 +1,17 @@
 {
-    "extends": ["airbnb-base", "prettier"],
-    "env": {
-        "node": true
-    },
-    "parserOptions": {
-        "ecmaVersion": 8
-    },
-    "rules": {
-        "no-console": "off",
-        "indent": ["error", 2],
-        "semi": ["error", "never"],
-        "no-return-assign": "warn",
-        "no-param-reassign": "warn"
-    }
+  "extends": ["airbnb-base", "prettier"],
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "rules": {
+    "no-console": "off",
+    "indent": ["error", 2],
+    "semi": ["error", "never"],
+    "no-return-assign": ["error", "except-parens"],
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-param-reassign": "warn"
+  }
 }
