@@ -30,7 +30,7 @@ const save = async (domain, cert) => {
 }
 
 const load = async domain => {
-  if (!await exists(domain)) return ''
+  if (!(await exists(domain))) return ''
   const key = await readDomainKey(domain)
   const cert = await readDomainCert(domain)
 

@@ -35,11 +35,15 @@ const createProxyConnectHandler = httpsProxyPort => (
   // if intercept
 
   reqUrl = parseUrl(`https://127.0.0.1:${httpsProxyPort}`)
-  const serverSocket = net.connect(reqUrl.port, reqUrl.hostname, () => {
-    clientSocket.write('HTTP/1.1 200 Connection Established\r\n\r\n')
-    serverSocket.write(head)
-    clientSocket.pipe(serverSocket).pipe(clientSocket)
-  })
+  const serverSocket = net.connect(
+    reqUrl.port,
+    reqUrl.hostname,
+    () => {
+      clientSocket.write('HTTP/1.1 200 Connection Established\r\n\r\n')
+      serverSocket.write(head)
+      clientSocket.pipe(serverSocket).pipe(clientSocket)
+    }
+  )
 }
 
 const createHttpProxy = httpsProxyPort =>

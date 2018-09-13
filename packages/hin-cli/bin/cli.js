@@ -4,8 +4,8 @@ const program = require('commander')
 const fs = require('fs')
 const path = require('path')
 const pkg = require('../package.json')
-const Proxy = require('../lib/proxy')
-const { createRootCA } = require('../lib/certificate')
+const Proxy = require('hin')
+const { createRootCA } = require('hin/lib/certificate')
 
 const USER_HOME = process.env.USERPROFILE || process.env.HOME
 const APP_HOME = process.env.HIN_HOME || path.join(USER_HOME, '/.hin/')

@@ -1,0 +1,37 @@
+{
+  "name": "hin-cli",
+  "version": "0.0.4",
+  "description": "Http/Https Interceptor Cli",
+  "homepage": "https://github.com/tsvayer/hin",
+  "author": {
+    "name": "Vitaliy Tsvayer",
+    "email": "tsvayer@gmail.com"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsvayer/hin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tsvayer/hin/issues"
+  },
+  "bin": {
+    "hin": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "./bin/cli.js",
+    "lint": "eslint bin",
+    "test": "jest",
+    "format:prettier": "prettier --write 'bin/**/*.js'",
+    "format:lint": "eslint --fix bin",
+    "format": "yarn format:prettier && yarn format:lint",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "commander": "^2.12.2",
+    "hin": "^0.0.4"
+  },
+  "files": ["./bin"],
+  "keywords": ["proxy", "http", "https", "ssl", "web", "debugger"],
+  "private": false
+}

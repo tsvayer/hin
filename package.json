@@ -1,39 +1,10 @@
 {
   "name": "hin",
-  "version": "0.0.4",
-  "description": "Http/Https Interceptor",
-  "homepage": "https://github.com/tsvayer/hin",
-  "author": {
-    "name": "Vitaliy Tsvayer",
-    "email": "tsvayer@gmail.com"
-  },
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tsvayer/hin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tsvayer/hin/issues"
-  },
-  "main": "./lib/proxy.js",
-  "bin": "./bin/cli.js",
-  "scripts": {
-    "start": "./bin/cli.js",
-    "lint": "eslint bin lib test",
-    "test": "jest",
-    "format:prettier": "prettier --write '{bin,lib,test}/**/*.js'",
-    "format:lint": "eslint --fix bin lib test",
-    "format": "npm run format:prettier && npm run format:lint",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": ["prettier --write", "eslint --fix", "git add"]
-  },
-  "dependencies": {
-    "commander": "^2.12.2",
-    "doasync": "^2.0.0",
-    "node-forge": "^0.7.1"
-  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tsvayer/hin.git",
+  "author": "Vitaliy Tsvayer <tsvayer@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^4.12.1",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -44,13 +15,11 @@
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.1"
   },
-  "files": ["./lib", "./bin"],
-  "directories": {
-    "lib": "./lib",
-    "doc": "./doc",
-    "example": "./example",
-    "test": "./test"
-  },
-  "keywords": ["proxy", "http", "https", "ssl", "web", "debugger"],
-  "private": false
+  "lint-staged": {
+    "*.js": [
+      "lerna run prettier -- -- --write",
+      "lerna run eslint -- -- --fix",
+      "git add"
+    ]
+  }
 }
