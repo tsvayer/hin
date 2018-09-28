@@ -1,6 +1,6 @@
 {
   "name": "hin-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Http/Https Interceptor Cli",
   "homepage": "https://github.com/tsvayer/hin",
   "author": {
@@ -29,9 +29,18 @@
   },
   "dependencies": {
     "commander": "^2.12.2",
-    "hin": "^0.0.4"
+    "hin": "^0.0.5"
   },
-  "files": ["./bin"],
-  "keywords": ["proxy", "http", "https", "ssl", "web", "debugger"],
+  "files": [
+    "./bin"
+  ],
+  "keywords": [
+    "proxy",
+    "http",
+    "https",
+    "ssl",
+    "web",
+    "debugger"
+  ],
   "private": false
 }

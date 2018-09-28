@@ -1,6 +1,6 @@
 {
   "name": "hin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Http/Https Interceptor",
   "homepage": "https://github.com/tsvayer/hin",
   "author": {
@@ -28,13 +28,22 @@
     "doasync": "^2.0.0",
     "node-forge": "^0.7.1"
   },
-  "files": ["./lib"],
+  "files": [
+    "./lib"
+  ],
   "directories": {
     "lib": "./lib",
     "doc": "./doc",
     "example": "./example",
     "test": "./test"
   },
-  "keywords": ["proxy", "http", "https", "ssl", "web", "debugger"],
+  "keywords": [
+    "proxy",
+    "http",
+    "https",
+    "ssl",
+    "web",
+    "debugger"
+  ],
   "private": false
 }
