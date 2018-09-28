@@ -1,6 +1,6 @@
 {
   "name": "hin-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Http/Https Interceptor Cli",
   "homepage": "https://github.com/tsvayer/hin",
   "author": {
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "commander": "^2.12.2",
-    "hin": "^0.0.5"
+    "hin": "^0.0.6"
   },
   "files": [
     "./bin"
