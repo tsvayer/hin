@@ -5,6 +5,10 @@
   "repository": "git@github.com:tsvayer/hin.git",
   "author": "Vitaliy Tsvayer <tsvayer@gmail.com>",
   "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
   "devDependencies": {
     "eslint": "^4.12.1",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -15,11 +19,7 @@
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.1"
   },
-  "lint-staged": {
-    "*.js": [
-      "lerna run prettier -- -- --write",
-      "lerna run eslint -- -- --fix",
-      "git add"
-    ]
+  "scripts": {
+    "precommit": "lerna run --concurrency 1 --stream precommit"
   }
 }

@@ -42,5 +42,11 @@
     "web",
     "debugger"
   ],
+  "lint-staged": {
+    "*.js": [
+      "yarn run format",
+      "git add"
+    ]
+  },
   "private": false
 }
